@@ -12,6 +12,7 @@ class ServerboundStopTypingPacket: AbstractPacket() {
     override fun packetInfo(): PacketInfo<*> = PACKET_INFO
 
     companion object {
+        @JvmField
         val PACKET_INFO = PacketInfo(
             identifier = identifier("herobrine:speech/stop_typing"),
             streamCodec = StreamCodec.unit(ServerboundStopTypingPacket())

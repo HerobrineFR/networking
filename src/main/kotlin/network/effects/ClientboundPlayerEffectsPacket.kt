@@ -19,6 +19,7 @@ data class ClientboundPlayerEffectsPacket(
     override fun packetInfo(): PacketInfo<*> = PACKET_INFO
 
     companion object {
+        @JvmField
         val PACKET_INFO = PacketInfo(
             identifier = identifier("herobrine:player_effects"),
             streamCodec = StreamCodec.composite(
