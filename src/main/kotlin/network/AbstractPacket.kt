@@ -9,8 +9,10 @@ import net.minecraft.network.protocol.common.custom.CustomPacketPayload
  * par des implémentations de couches réseau.
  */
 abstract class AbstractPacket: CustomPacketPayload {
+    protected val TYPE: CustomPacketPayload.Type<out CustomPacketPayload> = CustomPacketPayload.Type(packetInfo().identifier)
+
     override fun type(): CustomPacketPayload.Type<out CustomPacketPayload> {
-        return CustomPacketPayload.Type(packetInfo().identifier)
+        return TYPE
     }
 
     /**
