@@ -9,6 +9,8 @@ import java.util.UUID
 
 /**
  * Packet envoyé au serveur afin de demander les effets de potion d'un joueur.
+ *
+ * @property player [UUID] du joueur dont les effets sont demandés.
  */
 data class ServerboundRequestEffectsPacket(
     val player: UUID
