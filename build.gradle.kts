@@ -1,7 +1,7 @@
 plugins {
     kotlin("jvm") version "2.3.10"
     id("net.fabricmc.fabric-loom") version "1.17-SNAPSHOT"
-    id("com.vanniktech.maven.publish") version "0.30.0"
+    id("com.vanniktech.maven.publish") version "0.37.0"
 }
 
 dependencies {
@@ -18,10 +18,10 @@ tasks.test {
 }
 
 mavenPublishing {
-    publishToMavenCentral(com.vanniktech.maven.publish.SonatypeHost.CENTRAL_PORTAL)
+    publishToMavenCentral(automaticRelease = true)
     signAllPublications()
 
-    coordinates("fr.herobrine", rootProject.name, rootProject.version.toString())
+    coordinates(rootProject.group.toString(), rootProject.name, rootProject.version.toString())
 
     pom {
         name.set("Networking")
@@ -29,10 +29,18 @@ mavenPublishing {
         inceptionYear.set("2026")
         url.set("https://github.com/HerobrineFR/networking")
 
-        scm {
-            connection.set("scm:git:git://://github.com")
-            developerConnection.set("scm:git:ssh://://github.com")
-            url.set("https://github.com/HerobrineFR/networking")
+        developers {
+            developer {
+                id.set("Yaazor")
+                name.set("Yazor")
+                url.set("https://github.com/Yaazor")
+            }
         }
+        scm {
+            url.set("https://github.com/HerobrineFR/networking/")
+            connection.set("scm:git:git://github.com/HerobrineFR/networking.git")
+            developerConnection.set("scm:git:ssh://git@github.com/HerobrineFR/networking.git")
+        }
+
     }
 }
