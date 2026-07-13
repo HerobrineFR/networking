@@ -21,7 +21,7 @@ data class ClientboundStopTypingPayload(
     companion object {
         @JvmField
         val PACKET_INFO = PacketInfo(
-            identifier = identifier("herobrine:speech/player_start_typing"),
+            identifier = identifier("herobrine:speech/player_stop_typing"),
             streamCodec = StreamCodec.composite(
                 UUIDUtil.STREAM_CODEC, ClientboundStopTypingPayload::player,
                 ::ClientboundStopTypingPayload
