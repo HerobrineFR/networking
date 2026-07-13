@@ -11,6 +11,9 @@ import java.util.UUID
 
 /**
  * Packet envoyé au client, contenant le UUID d'un joueur ainsi que la liste de ses effets de potion.
+ *
+ * @property player [UUID] du joueur dont les effets sont envoyés.
+ * @property effects Liste des **effets** du joueur.
  */
 data class ClientboundPlayerEffectsPacket(
     val player: UUID,
