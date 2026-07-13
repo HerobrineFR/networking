@@ -137,6 +137,12 @@ jobs:
               gh release upload "$TAG" "$FILE" --clobber
             done
           fi
+
+      - name: Setup JDK
+        uses: actions/setup-java@v4
+        with:
+          java-version: 25
+          distribution: 'microsoft'
       - name: Publish to Maven Central
         run: ./gradlew publishAllPublicationsToMavenCentralRepository --no-configuration-cache
 
