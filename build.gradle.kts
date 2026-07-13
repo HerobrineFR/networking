@@ -41,6 +41,15 @@ mavenPublishing {
                 url.set("https://github.com/Yaazor")
             }
         }
+
+        licenses {
+            license {
+                name.set("The MIT License")
+                url.set("https://opensource.org")
+                distribution.set("repo")
+            }
+        }
+
         scm {
             url.set("https://github.com/HerobrineFR/networking/")
             connection.set("scm:git:git://github.com/HerobrineFR/networking.git")
