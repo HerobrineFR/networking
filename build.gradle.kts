@@ -1,4 +1,5 @@
 plugins {
+    `java-library`
     kotlin("jvm") version "2.3.10"
     id("net.fabricmc.fabric-loom") version "1.17-SNAPSHOT"
     id("com.vanniktech.maven.publish") version "0.37.0"
@@ -11,6 +12,10 @@ dependencies {
 
 kotlin {
     jvmToolchain(25)
+}
+
+java {
+    withSourcesJar()
 }
 
 tasks.test {
