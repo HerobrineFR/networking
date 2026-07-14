@@ -47,6 +47,10 @@ data class ClientProperty<T>(
             dataResult.id
         })
 
+        @JvmField
+        val PERSISTENT_CODEC = BY_NAME_CODEC.validate({property ->
+            DataResult.success(property)
+        })
         /**
          * Codec utilisant [BY_NAME_CODEC].
          *
@@ -54,7 +58,7 @@ data class ClientProperty<T>(
          * @see ClientInformation.CODEC
          */
         @JvmField
-        val VALUE_MAP_CODEC = Codec.dispatchedMap(BY_NAME_CODEC, {p -> p.codec})
+        val VALUE_MAP_CODEC = Codec.dispatchedMap(PERSISTENT_CODEC, {p -> p.codec})
 
         private val PROPERTIES = mutableMapOf<Identifier, ClientProperty<*>>()
 
