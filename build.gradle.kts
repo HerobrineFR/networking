@@ -6,6 +6,13 @@ plugins {
     id("org.jetbrains.dokka") version "2.1.0"
 }
 
+var suffix =  when(System.getenv("IS_SNAPSHOT")) {
+    "true" -> "-SNAPSHOT"
+    else -> ""
+}
+
+version = "${rootProject.version}$suffix"
+
 dependencies {
     testImplementation(kotlin("test"))
     minecraft("com.mojang:minecraft:26.1.2")
@@ -27,7 +34,7 @@ mavenPublishing {
     publishToMavenCentral(automaticRelease = true)
     signAllPublications()
 
-    coordinates(rootProject.group.toString(), rootProject.name, rootProject.version.toString())
+    coordinates(rootProject.group.toString(), rootProject.name, version.toString())
 
     pom {
         name.set("Networking")
