@@ -9,7 +9,7 @@ import net.minecraft.network.codec.StreamCodec
  * Packet envoyé au serveur lorsque le joueur interrompt la session de chat.
  */
 object ServerboundStopTypingPacket: AbstractPacket() {
-    override fun packetInfo(): PacketInfo<*> = PACKET_INFO
+    override fun packetInfo() = PACKET_INFO
 
     @JvmField
     val PACKET_INFO = PacketInfo(

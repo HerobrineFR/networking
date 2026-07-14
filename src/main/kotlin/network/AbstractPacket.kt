@@ -16,5 +16,5 @@ abstract class AbstractPacket: CustomPacketPayload {
     /**
      * Renvoie les informations du packet.
      */
-    protected abstract fun packetInfo(): PacketInfo<out AbstractPacket>
+    abstract fun packetInfo(): PacketInfo<out AbstractPacket>
 }
