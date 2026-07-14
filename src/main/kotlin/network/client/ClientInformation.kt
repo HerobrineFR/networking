@@ -2,6 +2,7 @@ package fr.herobrine.network.client
 
 import com.mojang.serialization.Codec
 import com.mojang.serialization.DataResult
+import net.minecraft.network.codec.ByteBufCodecs
 
 /**
  * Informations d'un client, contenant une liste de [ClientProperty].
@@ -15,6 +16,9 @@ data class ClientInformation(
     companion object {
         @JvmField
         val CODEC = codecFromMap(ClientProperty.VALUE_MAP_CODEC)
+
+        @JvmField
+        val STREAM_CODEC = ByteBufCodecs.fromCodec(CODEC)
 
         private fun codecFromMap(codec: Codec<Map<ClientProperty<*>, Any?>>): Codec<ClientInformation> {
             return codec.comapFlatMap({ map ->
