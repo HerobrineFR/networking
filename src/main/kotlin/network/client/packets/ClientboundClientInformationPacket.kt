@@ -1,7 +1,8 @@
-package fr.herobrine.network.client
+package fr.herobrine.network.client.packets
 
 import fr.herobrine.network.AbstractPacket
 import fr.herobrine.network.PacketInfo
+import fr.herobrine.network.client.ClientInformation
 import fr.herobrine.util.identifier
 import net.minecraft.core.UUIDUtil
 import net.minecraft.network.codec.StreamCodec
