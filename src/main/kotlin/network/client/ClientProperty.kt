@@ -22,6 +22,9 @@ data class ClientProperty<T>(
     val codec: Codec<T>
 ) {
     companion object {
+        /**
+         * Données concernant les mods du client.
+         */
         @JvmField
         val MOD_METADATA = registerProperty(
             ClientProperty(
@@ -31,6 +34,9 @@ data class ClientProperty<T>(
             )
         )
 
+        /**
+         * Codec permettant d'obtenir une [ClientProperty] à partir de son [id][Identifier].
+         */
         @JvmField
         val BY_NAME_CODEC: Codec<ClientProperty<*>> = Identifier.CODEC.comapFlatMap({ id ->
             when(val property = PROPERTIES[id]) {
@@ -41,18 +47,19 @@ data class ClientProperty<T>(
             dataResult.id
         })
 
+        /**
+         * Codec utilisant [BY_NAME_CODEC].
+         *
+         * Permet de créer le **codec** de [ClientInformation].
+         * @see ClientInformation.CODEC
+         */
         @JvmField
-        val PERSISTENT_CODEC = BY_NAME_CODEC.validate({property ->
-            DataResult.success(property)
-        })
-
-        @JvmField
-        val VALUE_MAP_CODEC = Codec.dispatchedMap(PERSISTENT_CODEC, {p -> p.codec})
+        val VALUE_MAP_CODEC = Codec.dispatchedMap(BY_NAME_CODEC, {p -> p.codec})
 
         private val PROPERTIES = mutableMapOf<Identifier, ClientProperty<*>>()
 
         /**
-         * Trouve une [ClientProperty] à partir de son id.
+         * Trouve une [ClientProperty] à partir de son [id][Identifier].
          */
         @JvmStatic
         fun findProperty(id: Identifier): Optional<ClientProperty<*>> {

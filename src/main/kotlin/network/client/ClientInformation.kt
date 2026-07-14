@@ -14,6 +14,17 @@ data class ClientInformation(
 ) {
 
     companion object {
+        /**
+         * Codec **décrivant** une map **property** vers **valeur**.
+         *
+         * ```json
+         * {
+         *  "herobrine:mod_metadata": {
+         *      "uses_herobrine_tweaks": true
+         *  }
+         * }
+         * ```
+         */
         @JvmField
         val CODEC = codecFromMap(ClientProperty.VALUE_MAP_CODEC)
 
@@ -29,6 +40,12 @@ data class ClientInformation(
         }
     }
 
+    /**
+     * Obtient une **valeur** à partir d'une **property**.
+     *
+     * @param property [ClientProperty] à obtenir.
+     * @param T Type de la propriété
+     */
     inline fun <reified T> getProperty(property: ClientProperty<T>): T {
         try {
             val storedProperty = properties.getValue(property)
@@ -44,6 +61,14 @@ data class ClientInformation(
         return defaultValue
     }
 
+    /**
+     * Définit la valeur d'une propriété.
+     *
+     * @param property Propriété à assigner
+     * @param value Nouvelle valeur
+     *
+     * @param T Type de la propriété
+     */
     fun <T> setProperty(property: ClientProperty<T>, value: T) {
         properties[property] = value as Any
     }
