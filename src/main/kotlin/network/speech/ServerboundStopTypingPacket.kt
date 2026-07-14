@@ -8,17 +8,12 @@ import net.minecraft.network.codec.StreamCodec
 /**
  * Packet envoyé au serveur lorsque le joueur interrompt la session de chat.
  */
-class ServerboundStopTypingPacket: AbstractPacket() {
+object ServerboundStopTypingPacket: AbstractPacket() {
     override fun packetInfo(): PacketInfo<*> = PACKET_INFO
 
-    companion object {
-        @JvmField
-        val INSTANCE = ServerboundStopTypingPacket()
-
-        @JvmField
-        val PACKET_INFO = PacketInfo(
-            identifier = identifier("herobrine:speech/stop_typing"),
-            streamCodec = StreamCodec.unit(INSTANCE)
-        )
-    }
+    @JvmField
+    val PACKET_INFO = PacketInfo(
+        identifier = identifier("herobrine:speech/stop_typing"),
+        streamCodec = StreamCodec.unit(ServerboundStopTypingPacket)
+    )
 }

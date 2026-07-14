@@ -9,17 +9,12 @@ import net.minecraft.network.codec.StreamCodec
  * Packet envoyé au serveur par Herobrine tweaks afin de lui annoncer
  * la présence du mod.
  */
-class ServerboundHerobrineTweaksHandshakePacket: AbstractPacket() {
+object ServerboundHerobrineTweaksHandshakePacket: AbstractPacket() {
     override fun packetInfo() = PACKET_INFO
 
-    companion object {
-        @JvmField
-        val INSTANCE = ServerboundHerobrineTweaksHandshakePacket()
-
-        @JvmField
-        val PACKET_INFO = PacketInfo(
-            identifier = identifier("herobrine:hbtweaks/handshake"),
-            streamCodec = StreamCodec.unit(INSTANCE)
-        )
-    }
+    @JvmField
+    val PACKET_INFO = PacketInfo(
+        identifier = identifier("herobrine:hbtweaks/handshake"),
+        streamCodec = StreamCodec.unit(ServerboundHerobrineTweaksHandshakePacket)
+    )
 }
