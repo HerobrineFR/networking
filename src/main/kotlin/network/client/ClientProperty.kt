@@ -22,6 +22,8 @@ data class ClientProperty<T>(
     val codec: Codec<T>
 ) {
     companion object {
+        private val PROPERTIES = mutableMapOf<Identifier, ClientProperty<*>>()
+
         /**
          * Données concernant les mods du client.
          */
@@ -59,8 +61,6 @@ data class ClientProperty<T>(
          */
         @JvmField
         val VALUE_MAP_CODEC = Codec.dispatchedMap(PERSISTENT_CODEC, {p -> p.codec})
-
-        private val PROPERTIES = mutableMapOf<Identifier, ClientProperty<*>>()
 
         /**
          * Trouve une [ClientProperty] à partir de son [id][Identifier].
