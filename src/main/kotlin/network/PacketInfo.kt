@@ -2,6 +2,7 @@ package fr.herobrine.network
 
 import net.minecraft.network.RegistryFriendlyByteBuf
 import net.minecraft.network.codec.StreamCodec
+import net.minecraft.network.protocol.common.custom.CustomPacketPayload
 import net.minecraft.resources.Identifier
 
 /**
@@ -15,5 +16,6 @@ import net.minecraft.resources.Identifier
 @JvmRecord
 data class PacketInfo<T: AbstractPacket>(
     val identifier: Identifier,
-    val streamCodec: StreamCodec<RegistryFriendlyByteBuf, T>
+    val streamCodec: StreamCodec<RegistryFriendlyByteBuf, T>,
+    val type: CustomPacketPayload.Type<T> = CustomPacketPayload.Type(identifier)
 )

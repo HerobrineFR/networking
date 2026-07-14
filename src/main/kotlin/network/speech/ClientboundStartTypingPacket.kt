@@ -15,7 +15,7 @@ import java.util.UUID
 data class ClientboundStartTypingPacket(
     val player: UUID
 ): AbstractPacket() {
-    override fun packetInfo(): PacketInfo<*> = PACKET_INFO
+    override fun packetInfo() = PACKET_INFO
 
     companion object {
         @JvmField

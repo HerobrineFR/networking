@@ -1,5 +1,6 @@
 package fr.herobrine.network
 
+import fr.herobrine.network.speech.ClientboundStopTypingPayload
 import net.minecraft.network.protocol.common.custom.CustomPacketPayload
 
 /**
@@ -9,18 +10,11 @@ import net.minecraft.network.protocol.common.custom.CustomPacketPayload
  * par des implémentations de couches réseau.
  */
 abstract class AbstractPacket: CustomPacketPayload {
-    protected var TYPE: CustomPacketPayload.Type<out CustomPacketPayload>? = null
 
-    override fun type(): CustomPacketPayload.Type<out CustomPacketPayload> {
-        if(TYPE == null) {
-            TYPE = CustomPacketPayload.Type(packetInfo().identifier)
-        }
-
-        return TYPE!!
-    }
+    override fun type(): CustomPacketPayload.Type<out CustomPacketPayload> = packetInfo().type
 
     /**
      * Renvoie les informations du packet.
      */
-    protected abstract fun packetInfo(): PacketInfo<*>
+    protected abstract fun packetInfo(): PacketInfo<out AbstractPacket>
 }

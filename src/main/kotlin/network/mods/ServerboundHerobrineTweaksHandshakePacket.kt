@@ -10,13 +10,15 @@ import net.minecraft.network.codec.StreamCodec
  * la présence du mod.
  */
 class ServerboundHerobrineTweaksHandshakePacket: AbstractPacket() {
-    override fun packetInfo(): PacketInfo<*> = PACKET_INFO
+    override fun packetInfo() = PACKET_INFO
 
     companion object {
+        val INSTANCE = ServerboundHerobrineTweaksHandshakePacket()
+
         @JvmField
         val PACKET_INFO = PacketInfo(
             identifier = identifier("herobrine:hbtweaks/handshake"),
-            streamCodec = StreamCodec.unit(ServerboundHerobrineTweaksHandshakePacket())
+            streamCodec = StreamCodec.unit(INSTANCE)
         )
     }
 }

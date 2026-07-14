@@ -15,7 +15,7 @@ data class ServerboundStartTypingPacket(
     val text: String
 ): AbstractPacket() {
 
-    override fun packetInfo(): PacketInfo<*> = PACKET_INFO
+    override fun packetInfo() = PACKET_INFO
 
     companion object {
         @JvmField

@@ -19,7 +19,7 @@ data class ClientboundPlayerEffectsPacket(
     val player: UUID,
     val effects: List<MobEffectInstance>
 ): AbstractPacket() {
-    override fun packetInfo(): PacketInfo<*> = PACKET_INFO
+    override fun packetInfo() = PACKET_INFO
 
     companion object {
         @JvmField
