@@ -20,11 +20,11 @@ class ClientInformationSerializeTest {
         ClientInformation.CODEC.encodeStart(NbtOps.INSTANCE, info).ifSuccess { tag ->
             ClientInformation.CODEC.decode(NbtOps.INSTANCE, tag).ifSuccess { pair ->
                 assertTrue { pair.first.getProperty(ClientProperty.MOD_METADATA).usesHerobrineTweaks }
+            }.ifError { error ->
+                fail(error.message())
             }
-
-            fail("ClientInfo tag decode failed")
+        }.ifError { error ->
+            fail(error.message())
         }
-
-        fail("ClientInfo encoding to NBT failed")
     }
 }
