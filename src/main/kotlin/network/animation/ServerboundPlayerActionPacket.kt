@@ -6,6 +6,11 @@ import fr.herobrine.network.PacketInfo
 import fr.herobrine.util.identifier
 import net.minecraft.network.codec.StreamCodec
 
+/**
+ * Packet envoyé par le **client afin** d'annoncer au **serveur** que celui-ci souhaite lancer une [PlayerAction].
+ *
+ * @property playerAction Action que le client souhaite lancer
+ */
 data class ServerboundPlayerActionPacket(
     val playerAction: PlayerAction
 ): AbstractPacket() {

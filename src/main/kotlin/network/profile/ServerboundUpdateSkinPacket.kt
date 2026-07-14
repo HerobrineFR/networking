@@ -7,7 +7,7 @@ import net.minecraft.network.codec.StreamCodec
 import net.minecraft.world.entity.player.PlayerSkin
 
 /**
- * Packet envoyé au serveur, permettant d'appliquer un changement de skin. (Non implémenté)
+ * Packet envoyé au serveur, permettant d'appliquer un **changement de skin**. (Non implémenté)
  *
  * @property skinPatch Nouvelles données du skin
  */

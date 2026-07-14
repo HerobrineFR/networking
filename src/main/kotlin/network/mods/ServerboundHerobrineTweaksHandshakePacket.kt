@@ -6,7 +6,7 @@ import fr.herobrine.util.identifier
 import net.minecraft.network.codec.StreamCodec
 
 /**
- * Packet envoyé au serveur par Herobrine tweaks afin de lui annoncer
+ * Packet envoyé au serveur par **Herobrine Tweaks** afin de lui annoncer
  * la présence du mod.
  */
 object ServerboundHerobrineTweaksHandshakePacket: AbstractPacket() {

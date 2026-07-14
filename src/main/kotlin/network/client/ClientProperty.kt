@@ -48,9 +48,8 @@ data class ClientProperty<T>(
         }, { dataResult ->
             dataResult.id
         })
-
-        @JvmField
-        val PERSISTENT_CODEC = BY_NAME_CODEC.validate({property ->
+        
+        private val PERSISTENT_CODEC = BY_NAME_CODEC.validate({property ->
             DataResult.success(property)
         })
         /**
