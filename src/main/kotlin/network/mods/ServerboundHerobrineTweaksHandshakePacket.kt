@@ -13,6 +13,7 @@ class ServerboundHerobrineTweaksHandshakePacket: AbstractPacket() {
     override fun packetInfo() = PACKET_INFO
 
     companion object {
+        @JvmField
         val INSTANCE = ServerboundHerobrineTweaksHandshakePacket()
 
         @JvmField

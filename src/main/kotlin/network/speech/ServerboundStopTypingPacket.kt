@@ -12,6 +12,7 @@ class ServerboundStopTypingPacket: AbstractPacket() {
     override fun packetInfo(): PacketInfo<*> = PACKET_INFO
 
     companion object {
+        @JvmField
         val INSTANCE = ServerboundStopTypingPacket()
 
         @JvmField
