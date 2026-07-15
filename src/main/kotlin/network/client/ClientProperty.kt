@@ -2,10 +2,11 @@ package fr.herobrine.network.client
 
 import com.mojang.serialization.Codec
 import com.mojang.serialization.DataResult
+import fr.herobrine.network.client.ClientProperty.Companion.BY_NAME_CODEC
 import fr.herobrine.network.client.meta.ModMetadata
 import fr.herobrine.util.identifier
 import net.minecraft.resources.Identifier
-import java.util.Optional
+import java.util.*
 
 /**
  * Propriété du client de jeu.

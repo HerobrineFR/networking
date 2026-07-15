@@ -1,6 +1,5 @@
 package fr.herobrine.network
 
-import fr.herobrine.network.speech.ClientboundStopTypingPayload
 import net.minecraft.network.protocol.common.custom.CustomPacketPayload
 
 /**

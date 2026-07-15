@@ -6,7 +6,7 @@ import fr.herobrine.network.client.ClientInformation
 import fr.herobrine.util.identifier
 import net.minecraft.core.UUIDUtil
 import net.minecraft.network.codec.StreamCodec
-import java.util.UUID
+import java.util.*
 
 /**
  * Packet permettant d'envoyer à un joueur les [ClientInformation] d'un joueur.

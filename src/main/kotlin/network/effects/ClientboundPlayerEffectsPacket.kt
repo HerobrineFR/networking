@@ -7,7 +7,7 @@ import net.minecraft.core.UUIDUtil
 import net.minecraft.network.codec.ByteBufCodecs
 import net.minecraft.network.codec.StreamCodec
 import net.minecraft.world.effect.MobEffectInstance
-import java.util.UUID
+import java.util.*
 
 /**
  * Packet envoyé au client, contenant le UUID d'un joueur ainsi que la liste de ses effets de potion.

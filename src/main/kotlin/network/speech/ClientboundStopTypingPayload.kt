@@ -5,7 +5,7 @@ import fr.herobrine.network.PacketInfo
 import fr.herobrine.util.identifier
 import net.minecraft.core.UUIDUtil
 import net.minecraft.network.codec.StreamCodec
-import java.util.UUID
+import java.util.*
 
 /**
  * Packet envoyé au client afin d'annoncer qu'un joueur a fermé sa session de chat.
