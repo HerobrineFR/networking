@@ -14,7 +14,7 @@ data class ModMetadata(
     companion object {
         @JvmField
         val CODEC = RecordCodecBuilder.create { i -> i.group(
-            Codec.BOOL.fieldOf("uses_herobrine_tweaks").forGetter(ModMetadata::usesHerobrineTweaks)
-        ).apply(i, ::ModMetadata) }
+                Codec.BOOL.fieldOf("uses_herobrine_tweaks").forGetter(ModMetadata::usesHerobrineTweaks)
+            ).apply(i, ::ModMetadata) }
     }
 }

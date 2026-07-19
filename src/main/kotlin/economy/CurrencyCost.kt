@@ -32,9 +32,9 @@ data class CurrencyCost(
     companion object {
         @JvmField
         val CODEC = RecordCodecBuilder.create { i -> i.group(
-            Codec.INT.fieldOf("value").forGetter(CurrencyCost::value),
-            CurrencyType.CODEC.fieldOf("cost_type").forGetter(CurrencyCost::costType)
-        ).apply(i, ::CurrencyCost) }
+                Codec.INT.fieldOf("value").forGetter(CurrencyCost::value),
+                CurrencyType.CODEC.fieldOf("cost_type").forGetter(CurrencyCost::costType)
+            ).apply(i, ::CurrencyCost) }
 
         @JvmField
         val STREAM_CODEC = ByteBufCodecs.fromCodec(CODEC)

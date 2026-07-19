@@ -14,8 +14,8 @@ class ClientInformationSerializeTest {
         val info = ClientInformation()
 
         info.setProperty(ClientProperty.MOD_METADATA, ModMetadata(
-            usesHerobrineTweaks = true
-        ))
+                usesHerobrineTweaks = true
+            ))
 
         ClientInformation.CODEC.encodeStart(NbtOps.INSTANCE, info).ifSuccess { tag ->
             ClientInformation.CODEC.decode(NbtOps.INSTANCE, tag).ifSuccess { pair ->

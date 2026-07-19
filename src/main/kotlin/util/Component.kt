@@ -48,7 +48,7 @@ fun String.asLiteral() = literalComponent(this)
  * @param components Liste de [Component]
  */
 fun Component.append(vararg components: Component): Component {
-    var newComponent = this.copy()
+    val newComponent = this.copy()
 
     components.forEach { sibling ->
         newComponent.siblings.add(sibling)

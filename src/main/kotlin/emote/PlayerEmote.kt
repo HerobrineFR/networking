@@ -25,10 +25,10 @@ data class PlayerEmote(
     companion object {
         @JvmField
         val CODEC = RecordCodecBuilder.create { i -> i.group(
-            Codec.STRING.fieldOf("id").forGetter(PlayerEmote::id),
-            ComponentSerialization.CODEC.fieldOf("display_name").forGetter(PlayerEmote::displayName),
-            Identifier.CODEC.fieldOf("item_model").forGetter(PlayerEmote::itemModel)
-        ).apply(i, ::PlayerEmote) }
+                Codec.STRING.fieldOf("id").forGetter(PlayerEmote::id),
+                ComponentSerialization.CODEC.fieldOf("display_name").forGetter(PlayerEmote::displayName),
+                Identifier.CODEC.fieldOf("item_model").forGetter(PlayerEmote::itemModel)
+            ).apply(i, ::PlayerEmote) }
 
         @JvmField
         val STREAM_CODEC = ByteBufCodecs.fromCodecWithRegistries(CODEC)

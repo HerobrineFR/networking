@@ -10,7 +10,7 @@ import java.util.*
 /**
  * Packet envoyé au client afin d'annoncer qu'un joueur a fermé sa session de chat.
  *
- * @property uuid [UUID] du joueur
+ * @property player [UUID] du joueur
  */
 data class ClientboundStopTypingPayload(
     val player: UUID

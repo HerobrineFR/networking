@@ -10,7 +10,7 @@ import java.util.*
 /**
  * Packet envoyé au client lorsqu'un joueur est en train d'écrire.
  *
- * @property uuid UUID du joueur concerné.
+ * @property player UUID du joueur concerné.
  */
 data class ClientboundStartTypingPacket(
     val player: UUID
