@@ -7,6 +7,7 @@ import fr.herobrine.util.asLiteral
 import fr.herobrine.util.emptyComponent
 import net.minecraft.network.chat.Component
 import net.minecraft.network.codec.ByteBufCodecs
+import net.minecraft.network.codec.StreamCodec
 
 /**
  * Représente un coût.
@@ -37,6 +38,10 @@ data class CurrencyCost(
             ).apply(i, ::CurrencyCost) }
 
         @JvmField
-        val STREAM_CODEC = ByteBufCodecs.fromCodec(CODEC)
+        val STREAM_CODEC = StreamCodec.composite(
+            ByteBufCodecs.INT, CurrencyCost::value,
+            ByteBufCodecs.fromCodec(CurrencyType.CODEC), CurrencyCost::costType,
+            ::CurrencyCost
+        )
     }
 }
