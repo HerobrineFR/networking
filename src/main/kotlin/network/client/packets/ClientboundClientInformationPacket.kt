@@ -21,6 +21,7 @@ data class ClientboundClientInformationPacket(
     override fun packetInfo() = PACKET_INFO
 
     companion object {
+        @JvmField
         val PACKET_INFO = PacketInfo(
             identifier("herobrine:client_information"),
             streamCodec = StreamCodec.composite(
