@@ -19,6 +19,9 @@ data class ServerboundGiveItemToPlayerPacket(
 
     companion object {
         @JvmField
+        val MAX_DISTANCE = 10.0
+
+        @JvmField
         val PACKET_INFO = PacketInfo(
             identifier = identifier("herobrine:give_item_to_player"),
             streamCodec = StreamCodec.composite(
